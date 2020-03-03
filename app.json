@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Photographer",
+    "slug": "Photographer",
+    "privacy": "public",
+    "sdkVersion": "35.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.advancedaquire.photoapp",
+      "buildNumber": "1.0.1"
+    },
+    "android":{
+      "package":"com.advancedaquire.photoapp"
+    },
+    "packagerOpts": {
+      "assetExts": ["ttf"]
+    }
+  }
+}
