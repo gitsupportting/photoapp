@@ -104,6 +104,7 @@ class Login extends React.Component {
                           <Block width={width * 0.8}>
                             <Input
                               placeholder='Email'
+                              autoCapitalize='none'
                               style={styles.inputs}
                               value={this.state.email}
                               onChangeText={email => this.setState({ email: email })}
@@ -121,6 +122,7 @@ class Login extends React.Component {
                           <Block width={width * 0.8}>
                             <Input
                               placeholder='Phone'
+                              autoCapitalize='none'
                               style={styles.inputs}
                               value={this.state.phone}
                               onChangeText={phone => this.setState({ phone: phone })}
@@ -138,6 +140,7 @@ class Login extends React.Component {
                           <Block width={width * 0.8} style={{ marginBottom: 5 }}>
                             <Input
                               placeholder='Code'
+                              autoCapitalize='none'
                               style={styles.inputs}
                               value={this.state.password}
                               secureTextEntry={true}

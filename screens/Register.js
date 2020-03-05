@@ -105,6 +105,7 @@ class Register extends React.Component {
                           <Block width={width * 0.8} style={{ marginBottom: 5 }}>
                             <Input
                               placeholder='Name'
+                              autoCapitalize='none'
                               style={styles.inputs}
                               value={this.state.name}
                               onChangeText={name => this.setState({ name: name })}
@@ -122,6 +123,7 @@ class Register extends React.Component {
                           <Block width={width * 0.8}>
                             <Input
                               placeholder='Email'
+                              autoCapitalize='none'
                               style={styles.inputs}
                               value={this.state.email}
                               onChangeText={email => this.setState({ email: email })}
@@ -139,6 +141,7 @@ class Register extends React.Component {
                           <Block width={width * 0.8}>
                             <Input
                               placeholder='Phone Number'
+                              autoCapitalize='none'
                               style={styles.inputs}
                               value={this.state.phone}
                               onChangeText={phone => this.setState({ phone: phone })}
@@ -156,6 +159,7 @@ class Register extends React.Component {
                           <Block width={width * 0.8} style={{ marginBottom: 5 }}>
                             <Input
                               placeholder='Password'
+                              autoCapitalize='none'
                               style={styles.inputs}
                               value={this.state.password}
                               onChangeText={password => this.setState({ password: password })}
@@ -174,6 +178,7 @@ class Register extends React.Component {
                           <Block width={width * 0.8} style={{ marginBottom: 5 }}>
                             <Input
                               placeholder='Retype Password'
+                              autoCapitalize='none'
                               style={styles.inputs}
                               value={this.state.confirmPassword}
                               onChangeText={confirmPassword =>

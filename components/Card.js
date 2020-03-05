@@ -8,12 +8,21 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators as actions } from '../actions/counts'
 import { Button } from '../components'
+let { width, height } = Dimensions.get('window')
+let descriptionHeight;
 class Card extends Component {
-  OnArticleDetails (item) {
+  componentDidMount() {
+    if (width / height <= 0.563) {
+      descriptionHeight = 0.5 * height
+    } else {
+      descriptionHeight = 0.4 * height
+    }
+  }
+  OnArticleDetails(item) {
     this.props.navigation.navigate('Articles')
     this.props.OnArticleDetails(item)
   }
-  render () {
+  render() {
     const {
       navigation,
       item,
@@ -79,7 +88,6 @@ class Card extends Component {
         </Block>
       )
     } else {
-      this.OnArticleDetails(item)
       return (
         <Block row={horizontal} card flex style={cardContainer}>
           <Block flex>
@@ -111,13 +119,16 @@ class Card extends Component {
             <Block flex space='between' style={styles.cardDescription}>
               <Block flex>
                 <WebView
+                  useWebKit={true}
                   style={{
                     fontFamily: 'montserrat-regular',
                     textAlign: 'center',
                     padding: 15,
-                    height: Dimensions.get('window').height * 0.4
+                    height: descriptionHeight,
                   }}
-                  source={{ html: item.content }}
+                  startInLoadingState={true}
+
+                  source={{html: '<head><meta name="viewport" content="width=device-width, initial-scale=1"></head><body>'+item.content}}
                 />
               </Block>
             </Block>
@@ -196,13 +207,13 @@ const styles = StyleSheet.create({
   }
 })
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   const { ArticleDetail } = state
   return {
     ArticleDetail
   }
 }
-function mapDispatchToProps (dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     OnArticleDetails: bindActionCreators(actions.OnArticleDetails, dispatch)
   }
