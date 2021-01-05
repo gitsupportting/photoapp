@@ -15,7 +15,7 @@
     "url": "git+https://github.com/creativetimofficial/photo.git"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "expo": "^35.0.0",
     "expo-asset": "^7.0.0",
     "expo-font": "^7.0.0",
